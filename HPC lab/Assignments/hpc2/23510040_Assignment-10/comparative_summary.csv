@@ -1,0 +1,5 @@
+Algorithm,CPUTimeMs,CUDABasicKernelMs,CUDAOptKernelMs,H2DMs,D2HMs,TotalCUDAOptMs,KernelSpeedup,TotalSpeedup,MainOptimization
+MatrixMultiplication,204.52,11.769,6.804,2.320,0.856,10.212,30.06,20.03,SharedMemoryTiling
+Reduction,61.58,28.438,1.599,9.212,0.456,11.506,38.50,5.35,SharedTreeReduction
+PrefixSum,21.84,4.275,1.336,3.841,5.395,10.760,16.34,2.03,HillisSteeleShared
+Histogram,1646.88,0.679,0.775,2.730,0.118,3.817,2124.54,431.45,SharedPrivatization

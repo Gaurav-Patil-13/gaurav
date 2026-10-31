@@ -1,0 +1,362 @@
+=================================================================
+         ASSIGNMENT 9 - TASK 1: EXPLORE GPU ENVIRONMENT         
+=================================================================
+Detected 1 CUDA-capable device(s)
+
+-----------------------------------------------------------------
+Device 0: "NVIDIA GeForce RTX 2050"
+-----------------------------------------------------------------
+  CUDA Driver Version / Runtime Version:         12.7 / 12.0
+  CUDA Capability Major/Minor version number:    8.6
+  Total amount of global memory:                 4095.50 MBytes (4.00 GBytes)
+  Number of Streaming Multiprocessors (SMs):     16
+  Total amount of constant memory:               65536 bytes
+  Total amount of shared memory per block:       49152 bytes
+  Total number of registers available per block: 65536
+  Warp size:                                     32 threads
+  Maximum number of threads per multiprocessor:  1536
+  Maximum number of threads per block:           1024
+  Max dimension size of a thread block (x,y,z):  (1024, 1024, 64)
+  Max dimension size of a grid size    (x,y,z):  (2147483647, 65535, 65535)
+  Memory Clock Rate:                             7001.00 MHz
+  Memory Bus Width:                              64-bit
+  L2 Cache Size:                                 1048576 bytes (1024.00 KB)
+
+Summary Parameters Table:
+  +----------------------------+--------------------------------------+
+  | Parameter                  | Value                                |
+  +----------------------------+--------------------------------------+
+  | GPU Name                   | NVIDIA GeForce RTX 2050              |
+  | GPU Memory                 | 4.00 GB (4294443008 bytes)       |
+  | CUDA Runtime Version       | 12.0                                  |
+  | Compute Capability         | 8.6                                  |
+  | Number of SMs              | 16                                   |
+  | Maximum Threads per Block  | 1024                                 |
+  | Maximum Grid Dimensions    | (2147483647, 65535, 65535)           |
+  +----------------------------+--------------------------------------+
+
+Questions & Answers:
+1. What GPU is available on your system?
+   -> NVIDIA GeForce RTX 2050 (4 GB VRAM, Ampere Architecture)
+2. What is the maximum number of threads supported in one block?
+   -> 1024 threads per block.
+3. What is an SM?
+   -> A Streaming Multiprocessor (SM) is the fundamental hardware compute unit
+      of NVIDIA GPUs containing CUDA cores, tensor cores, registers, warp schedulers,
+      and shared memory/L1 cache.
+4. Why are GPU resources different from CPU cores?
+   -> CPUs prioritize low latency for sequential code using large caches and complex
+      out-of-order execution logic. GPUs prioritize high throughput for massive data
+      parallelism using thousands of smaller, energy-efficient SIMT cores.
+
+=================================================================
+   ASSIGNMENT 9 - TASK 2: FIRST CUDA PROGRAM (HELLO FROM GPU)    
+=================================================================
+
+=================================================================
+ Launching Kernel: 1 block(s), 8 threads/block (Total: 8 threads)
+=================================================================
+Hello from GPU Thread 0 (Block 0, Local Thread 0)
+Hello from GPU Thread 1 (Block 0, Local Thread 1)
+Hello from GPU Thread 2 (Block 0, Local Thread 2)
+Hello from GPU Thread 3 (Block 0, Local Thread 3)
+Hello from GPU Thread 4 (Block 0, Local Thread 4)
+Hello from GPU Thread 5 (Block 0, Local Thread 5)
+Hello from GPU Thread 6 (Block 0, Local Thread 6)
+Hello from GPU Thread 7 (Block 0, Local Thread 7)
+
+=================================================================
+ Launching Kernel: 1 block(s), 16 threads/block (Total: 16 threads)
+=================================================================
+Hello from GPU Thread 0 (Block 0, Local Thread 0)
+Hello from GPU Thread 1 (Block 0, Local Thread 1)
+Hello from GPU Thread 2 (Block 0, Local Thread 2)
+Hello from GPU Thread 3 (Block 0, Local Thread 3)
+Hello from GPU Thread 4 (Block 0, Local Thread 4)
+Hello from GPU Thread 5 (Block 0, Local Thread 5)
+Hello from GPU Thread 6 (Block 0, Local Thread 6)
+Hello from GPU Thread 7 (Block 0, Local Thread 7)
+Hello from GPU Thread 8 (Block 0, Local Thread 8)
+Hello from GPU Thread 9 (Block 0, Local Thread 9)
+Hello from GPU Thread 10 (Block 0, Local Thread 10)
+Hello from GPU Thread 11 (Block 0, Local Thread 11)
+Hello from GPU Thread 12 (Block 0, Local Thread 12)
+Hello from GPU Thread 13 (Block 0, Local Thread 13)
+Hello from GPU Thread 14 (Block 0, Local Thread 14)
+Hello from GPU Thread 15 (Block 0, Local Thread 15)
+
+=================================================================
+ Launching Kernel: 2 block(s), 8 threads/block (Total: 16 threads)
+=================================================================
+Hello from GPU Thread 0 (Block 0, Local Thread 0)
+Hello from GPU Thread 1 (Block 0, Local Thread 1)
+Hello from GPU Thread 2 (Block 0, Local Thread 2)
+Hello from GPU Thread 3 (Block 0, Local Thread 3)
+Hello from GPU Thread 4 (Block 0, Local Thread 4)
+Hello from GPU Thread 5 (Block 0, Local Thread 5)
+Hello from GPU Thread 6 (Block 0, Local Thread 6)
+Hello from GPU Thread 7 (Block 0, Local Thread 7)
+Hello from GPU Thread 8 (Block 1, Local Thread 0)
+Hello from GPU Thread 9 (Block 1, Local Thread 1)
+Hello from GPU Thread 10 (Block 1, Local Thread 2)
+Hello from GPU Thread 11 (Block 1, Local Thread 3)
+Hello from GPU Thread 12 (Block 1, Local Thread 4)
+Hello from GPU Thread 13 (Block 1, Local Thread 5)
+Hello from GPU Thread 14 (Block 1, Local Thread 6)
+Hello from GPU Thread 15 (Block 1, Local Thread 7)
+
+=================================================================
+ Launching Kernel: 4 block(s), 8 threads/block (Total: 32 threads)
+=================================================================
+Hello from GPU Thread 0 (Block 0, Local Thread 0)
+Hello from GPU Thread 1 (Block 0, Local Thread 1)
+Hello from GPU Thread 2 (Block 0, Local Thread 2)
+Hello from GPU Thread 3 (Block 0, Local Thread 3)
+Hello from GPU Thread 4 (Block 0, Local Thread 4)
+Hello from GPU Thread 5 (Block 0, Local Thread 5)
+Hello from GPU Thread 6 (Block 0, Local Thread 6)
+Hello from GPU Thread 7 (Block 0, Local Thread 7)
+Hello from GPU Thread 8 (Block 1, Local Thread 0)
+Hello from GPU Thread 9 (Block 1, Local Thread 1)
+Hello from GPU Thread 10 (Block 1, Local Thread 2)
+Hello from GPU Thread 11 (Block 1, Local Thread 3)
+Hello from GPU Thread 12 (Block 1, Local Thread 4)
+Hello from GPU Thread 13 (Block 1, Local Thread 5)
+Hello from GPU Thread 14 (Block 1, Local Thread 6)
+Hello from GPU Thread 15 (Block 1, Local Thread 7)
+Hello from GPU Thread 16 (Block 2, Local Thread 0)
+Hello from GPU Thread 17 (Block 2, Local Thread 1)
+Hello from GPU Thread 18 (Block 2, Local Thread 2)
+Hello from GPU Thread 19 (Block 2, Local Thread 3)
+Hello from GPU Thread 20 (Block 2, Local Thread 4)
+Hello from GPU Thread 21 (Block 2, Local Thread 5)
+Hello from GPU Thread 22 (Block 2, Local Thread 6)
+Hello from GPU Thread 23 (Block 2, Local Thread 7)
+Hello from GPU Thread 24 (Block 3, Local Thread 0)
+Hello from GPU Thread 25 (Block 3, Local Thread 1)
+Hello from GPU Thread 26 (Block 3, Local Thread 2)
+Hello from GPU Thread 27 (Block 3, Local Thread 3)
+Hello from GPU Thread 28 (Block 3, Local Thread 4)
+Hello from GPU Thread 29 (Block 3, Local Thread 5)
+Hello from GPU Thread 30 (Block 3, Local Thread 6)
+Hello from GPU Thread 31 (Block 3, Local Thread 7)
+
+=================================================================
+ OBSERVATION & ANALYSIS TABLE                                    
+=================================================================
+ Blocks | Threads/Block | Total Threads | Output Observation
+   1    |       8       |       8       | Threads 0 to 7 execute in single block 0.
+   1    |      16       |      16       | Threads 0 to 15 execute in single block 0.
+   2    |       8       |      16       | Block 0 has threads 0-7; Block 1 has threads 0-7.
+   4    |       8       |      32       | 4 blocks execute concurrently with 8 threads each.
+
+Think Answer:
+Does changing the number of blocks change the thread ID (threadIdx.x) values?
+-> NO. threadIdx.x is local to each block and always ranges from 0 to (blockDim.x - 1).
+   Adding more blocks creates additional block instances (different blockIdx.x),
+   but within each block, threadIdx.x restarts from 0.
+   To obtain a unique identifier across the whole grid, Global Thread ID must be computed:
+   GlobalID = blockIdx.x * blockDim.x + threadIdx.x
+
+=================================================================
+    ASSIGNMENT 9 - TASK 3: UNDERSTAND THREAD AND BLOCK IDS       
+=================================================================
+Running configuration: 2 blocks x 4 threads per block (Total: 8)
+
+Expected Conceptual Structure:
+  Block 0:
+    Thread 0 -> Global ID 0
+    Thread 1 -> Global ID 1
+    Thread 2 -> Global ID 2
+    Thread 3 -> Global ID 3
+  Block 1:
+    Thread 0 -> Global ID 4
+    Thread 1 -> Global ID 5
+    Thread 2 -> Global ID 6
+    Thread 3 -> Global ID 7
+
+Actual GPU Kernel Output:
+-----------------------------------------------------------------
+Block 1: Thread 0 within Block -> Global Thread ID 4 (blockDim = 4)
+Block 1: Thread 1 within Block -> Global Thread ID 5 (blockDim = 4)
+Block 1: Thread 2 within Block -> Global Thread ID 6 (blockDim = 4)
+Block 1: Thread 3 within Block -> Global Thread ID 7 (blockDim = 4)
+Block 0: Thread 0 within Block -> Global Thread ID 0 (blockDim = 4)
+Block 0: Thread 1 within Block -> Global Thread ID 1 (blockDim = 4)
+Block 0: Thread 2 within Block -> Global Thread ID 2 (blockDim = 4)
+Block 0: Thread 3 within Block -> Global Thread ID 3 (blockDim = 4)
+-----------------------------------------------------------------
+Mathematical Formula Used:
+  GlobalID = blockIdx.x * blockDim.x + threadIdx.x
+Where:
+  blockIdx.x  = ID of the thread block within the 1D grid
+  blockDim.x  = Number of threads contained in each block (4)
+  threadIdx.x = Local thread ID within the block (0 to 3)
+
+=================================================================
+       ASSIGNMENT 9 - TASK 4: VECTOR ADDITION USING CUDA         
+=================================================================
+Vector size N: 1000000 elements (3.81 MB per array)
+
+[Step 1] Executing Sequential Vector Addition on CPU...
+  Sequential CPU Execution Time: 4.4250 ms
+
+[Step 2] Executing Vector Addition on GPU using CUDA Kernel...
+  Kernel launch configuration: 3907 blocks, 256 threads/block (Total threads: 1000192)
+  CUDA GPU Kernel Execution Time: 3.7819 ms
+
+[Step 3] Correctness Verification (CPU Result vs GPU Result):
+  Sample index 0:   CPU = 1.50, GPU = 1.50
+  Sample index 100: CPU = 1.50, GPU = 1.50
+  Sample index 999999: CPU = 49.50, GPU = 49.50
+  Maximum absolute difference: 0.000000e+00
+  Verification Result: PASSED (CPU and GPU outputs match perfectly within tolerance)
+
+=================================================================
+     ASSIGNMENT 9 - TASK 5: CUDA MEMORY MANAGEMENT PIPELINE      
+=================================================================
+Vector size: 500000 elements (1.91 MB)
+
+[1] Host Memory Allocation (Host RAM):
+    -> Calling malloc() on CPU for h_A, h_B, h_C (Total: 5.72 MB)
+[2] Device Memory Allocation (GPU VRAM):
+    -> Calling cudaMalloc() to allocate device buffers d_A, d_B, d_C in GPU Global Memory
+[3] Data Transfer: Host to Device (H2D):
+    -> Calling cudaMemcpy(..., cudaMemcpyHostToDevice) over PCIe bus
+[4] Kernel Launch on Device:
+    -> Launching memory_demo_kernel<<<1954, 256>>>() across GPU Streaming Multiprocessors
+[5] Data Transfer: Device to Host (D2H):
+    -> Calling cudaMemcpy(..., cudaMemcpyDeviceToHost) over PCIe bus
+[6] Device Memory Deallocation:
+    -> Calling cudaFree() to release GPU Global Memory
+[7] Host Memory Deallocation:
+    -> Calling free() to release CPU RAM
+
+=================================================================
+ CUDA MEMORY MANAGEMENT OPERATIONS SUMMARY TABLE                 
+=================================================================
+ Function       | Executing Entity | Memory Location Affected | Purpose
+ ---------------+------------------+--------------------------+--------------------------------------
+ malloc()       | Host (CPU)       | System RAM               | Allocates host virtual memory.
+ cudaMalloc()   | Host (CPU Driver)| GPU Global Memory (VRAM) | Allocates contiguous device memory.
+ cudaMemcpy(H2D)| Host/DMA Engine  | PCIe / Host to VRAM      | Copies input data to GPU memory.
+ Kernel Launch  | Device (GPU SMs) | GPU Register / L1 / L2   | Parallel arithmetic execution.
+ cudaMemcpy(D2H)| Host/DMA Engine  | PCIe / VRAM to Host      | Copies computed results back to CPU.
+ cudaFree()     | Host (CPU Driver)| GPU Global Memory (VRAM) | Releases allocated device memory.
+ free()         | Host (CPU)       | System RAM               | Releases CPU system memory.
+
+=================================================================
+ ASSIGNMENT 9 - TASK 6: VECTOR ADDITION WITH DIFFERENT BLOCK SIZES 
+=================================================================
+Fixed Vector Size N: 1000000 elements
+
+Execution Benchmark Table:
++-------------+---------------+---------------+--------------------+----------------+
+| Vector Size | Threads/Block | Blocks Needed | Total Threads Grid | Kernel Time (ms)|
++-------------+---------------+---------------+--------------------+----------------+
+| 1000000     | 64            | 15625         | 1000000            | 0.2670         |
+| 1000000     | 128           | 7813          | 1000064            | 0.1744         |
+| 1000000     | 256           | 3907          | 1000192            | 0.2095         |
+| 1000000     | 512           | 1954          | 1000448            | 0.1702         |
++-------------+---------------+---------------+--------------------+----------------+
+
+Analysis & Answers:
+1. Does increasing threads per block always improve performance?
+   -> NO. Beyond a certain threshold (e.g. 256 or 512), performance plateaus or can
+      even slightly degrade due to register pressure, reduced warp occupancy, and
+      limited shared memory per SM.
+2. What happens when the number of threads is not an exact multiple of N?
+   -> Ceiling division creates an extra block, causing the total thread count to exceed N.
+      The 'trailing' threads in the last block have Global IDs >= N.
+3. Why is the boundary check necessary?
+   -> Without 'if (id < N)', the trailing threads would write to memory addresses
+      outside the allocated array bounds, triggering segmentation faults, invalid
+      memory access errors (cudaErrorIllegalAddress), or data corruption.
+
+=================================================================
+  ASSIGNMENT 9 - TASK 7: SEQUENTIAL vs OpenMP vs CUDA BENCHMARK 
+=================================================================
+Benchmarking across problem sizes:
+
+-----------------------------------------------------------------
+>>> Problem Size N = 100000 (10^5 elements, 0.38 MB per array)
+-----------------------------------------------------------------
+  Sequential CPU Time:            0.3808 ms
+  OpenMP Multi-Core Time:        14.8249 ms  (Speedup: 0.03x)
+  CUDA Host-to-Device (H2D):      2.4529 ms
+  CUDA Kernel Execution:          0.1133 ms  (Kernel Speedup: 3.36x)
+  CUDA Device-to-Host (D2H):      0.7065 ms
+  CUDA Total End-to-End:          3.2727 ms  (End-to-End Speedup: 0.12x)
+  Verification Status:        OMP diff=0.000000e+00, CUDA diff=0.000000e+00 [PASSED]
+
+-----------------------------------------------------------------
+>>> Problem Size N = 1000000 (10^6 elements, 3.81 MB per array)
+-----------------------------------------------------------------
+  Sequential CPU Time:            4.3767 ms
+  OpenMP Multi-Core Time:         1.8453 ms  (Speedup: 2.37x)
+  CUDA Host-to-Device (H2D):      1.6487 ms
+  CUDA Kernel Execution:          0.2294 ms  (Kernel Speedup: 19.08x)
+  CUDA Device-to-Host (D2H):      4.8894 ms
+  CUDA Total End-to-End:          6.7675 ms  (End-to-End Speedup: 0.65x)
+  Verification Status:        OMP diff=0.000000e+00, CUDA diff=0.000000e+00 [PASSED]
+
+-----------------------------------------------------------------
+>>> Problem Size N = 10000000 (10^7 elements, 38.15 MB per array)
+-----------------------------------------------------------------
+  Sequential CPU Time:           54.3855 ms
+  OpenMP Multi-Core Time:        11.9173 ms  (Speedup: 4.56x)
+  CUDA Host-to-Device (H2D):     16.6943 ms
+  CUDA Kernel Execution:          1.3810 ms  (Kernel Speedup: 39.38x)
+  CUDA Device-to-Host (D2H):     69.2694 ms
+  CUDA Total End-to-End:         87.3446 ms  (End-to-End Speedup: 0.62x)
+  Verification Status:        OMP diff=0.000000e+00, CUDA diff=0.000000e+00 [PASSED]
+
+=================================================================
+ ANALYSIS & DISCUSSION ANSWERS                                   
+=================================================================
+1. Which implementation is fastest for smaller input sizes (10^5)?
+   -> OpenMP or Sequential CPU is often fastest for small inputs because
+      the PCIe data transfer overhead and CUDA runtime launch latency dominate
+      the small computational workload.
+
+2. What happens as the input size increases (10^6, 10^7)?
+   -> CUDA GPU kernel speedup increases dramatically. The sheer number of
+      CUDA cores (over 2000 hardware execution threads) provides massive memory
+      bandwidth and computation throughput that easily surpasses CPU cores.
+
+3. Why might CUDA have overhead for small problems?
+   -> CUDA kernel launch latency (~5-10 microseconds), thread block scheduling,
+      and PCIe memory copying (H2D and D2H) introduce fixed latency costs that
+      exceed the tiny compute time of small arrays.
+
+4. What additional overhead is introduced by host-device data transfer?
+   -> Host-to-Device and Device-to-Host transfers must traverse the PCIe bus
+      (typically 8-16 GB/s), which is orders of magnitude slower than on-chip GPU
+      VRAM bandwidth (over 100-200 GB/s).
+
+5. Why can CUDA become advantageous for highly parallel workloads?
+   -> For large data parallel workloads, thousands of GPU threads operate in parallel,
+      overlapping memory latency via warp scheduling and delivering tens of times
+      higher throughput than multi-core CPUs.
+
+=================================================================
+ ASSIGNMENT 9 - TASK 8: 1D ARRAY PROCESSING (ELEMENT-WISE MULT & SQUARE)
+=================================================================
+Problem Size N = 5000000 elements (19.07 MB per array)
+
+>>> PART 1: OPTION B - Element-wise Vector Multiplication (C = A * B)
+  Sequential CPU Time:               22.2620 ms
+  CUDA Host-to-Device Transfer:      12.1382 ms
+  CUDA Kernel Execution Time:         0.7859 ms
+  CUDA Device-to-Host Transfer:      19.6087 ms
+  CUDA Total Execution Time:         32.5328 ms
+  Kernel Speedup (T_cpu/T_kern):       28.33x
+  End-to-End Speedup (T_cpu/T_gpu):     0.68x
+  Max Absolute Difference:        0.000000e+00 [VERIFICATION PASSED]
+
+>>> PART 2: OPTION C - Array Squaring (B[i] = A[i]^2)
+  Sequential CPU Time:               21.3535 ms
+  CUDA Kernel Execution Time:         0.5868 ms
+  Kernel Speedup:                      36.39x
+  Max Absolute Difference:        0.000000e+00 [VERIFICATION PASSED]
+

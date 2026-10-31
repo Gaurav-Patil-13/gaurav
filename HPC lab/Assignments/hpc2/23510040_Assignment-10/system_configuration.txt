@@ -1,0 +1,65 @@
+=================================================================
+           SYSTEM HARDWARE & CUDA ENVIRONMENT REPORT             
+=================================================================
+
+[1] DATE AND TIME OF RUN
+Date: Sun Oct 18 17:50:32 UTC 2026
+Hostname: Lucifer31
+
+[2] CPU ARCHITECTURE & PROCESSOR INFO
+Architecture:                            x86_64
+CPU(s):                                  16
+On-line CPU(s) list:                     0-15
+Model name:                              AMD Ryzen 7 5800H with Radeon Graphics
+Thread(s) per core:                      2
+Core(s) per socket:                      8
+Socket(s):                               1
+L1d cache:                               256 KiB (8 instances)
+L1i cache:                               256 KiB (8 instances)
+L2 cache:                                4 MiB (8 instances)
+L3 cache:                                16 MiB (1 instance)
+NUMA node0 CPU(s):                       0-15
+
+[3] MEMORY & SWAP INFORMATION
+               total        used        free      shared  buff/cache   available
+Mem:           7.5Gi       875Mi       5.4Gi       5.2Mi       1.4Gi       6.6Gi
+Swap:          2.0Gi          0B       2.0Gi
+
+[4] OPERATING SYSTEM & KERNEL
+PRETTY_NAME="Ubuntu 24.04.2 LTS"
+VERSION="24.04.2 LTS (Noble Numbat)"
+Linux Lucifer31 6.18.54.1-microsoft-standard-WSL2 #1 SMP PREEMPT_DYNAMIC Tue Oct  6 19:13:07 UTC 2026 x86_64 x86_64 x86_64 GNU/Linux
+
+[5] C/C++ COMPILER
+gcc (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0
+g++ (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0
+
+[6] NVIDIA GPU ACCELERATOR & DRIVER (NVIDIA-SMI)
+Sun Oct 18 17:50:33 2026       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 565.65                 Driver Version: 566.07         CUDA Version: 12.7     |
+|-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA GeForce RTX 2050        On  |   00000000:01:00.0 Off |                  N/A |
+| N/A   50C    P5              4W /   40W |     437MiB /   4096MiB |     38%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+                                                                                         
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI        PID   Type   Process name                              GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+
+[7] CUDA TOOLKIT & NVCC COMPILER
+nvcc: NVIDIA (R) Cuda compiler driver
+Copyright (c) 2005-2023 NVIDIA Corporation
+Built on Fri_Jan__6_16:45:21_PST_2023
+Cuda compilation tools, release 12.0, V12.0.140
+Build cuda_12.0.r12.0/compiler.32267302_0
+

@@ -1,0 +1,7 @@
+Distribution,InputSize,CPUTimeMs,GlobalAtomicMs,SharedPrivatizedMs,SpeedupSharedOverGlobal,SpeedupSharedOverCPU
+Uniform,1000000,1.083,8.4296,0.3973,21.216,2.725
+Uniform,5000000,3.767,2.5692,0.3573,7.190,10.542
+Uniform,10000000,5.957,5.1835,0.7332,7.070,8.125
+Concentrated,1000000,0.884,0.9789,0.0829,11.802,10.661
+Concentrated,5000000,4.390,3.2522,0.4321,7.526,10.160
+Concentrated,10000000,8.603,6.1092,0.7168,8.523,12.002
